@@ -49,7 +49,7 @@ During the development of EShop, several challenges were encountered:
 
 ## Getting Started
 
-1. Clone the repository: git clone https://github.com/SursaChauhan/EShop.git
+1. Clone the repository: git clone https://github.com/SursaChauhan/E-Shop.git
 2. Install dependencies: npm install
 3. Start the development server: npm start
 
