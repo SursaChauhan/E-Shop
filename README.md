@@ -25,7 +25,7 @@ EShop is a full-stack web application developed as an individual project, center
 
 ## Project Link
 
-[EShop - Live Demo](https://65c0ea65f9ebfe1ebd0d2558--dainty-pastelito-74390b.netlify.app/)
+[EShop - Live Demo](https://65c1db9ddf583a48fd7a29a9--guileless-travesseiro-d925d9.netlify.app/)
 
 ## Difficulties Faced
 
