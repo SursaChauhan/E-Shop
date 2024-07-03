@@ -33,7 +33,7 @@ export const createOrder = (order) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.post(`http://localhost:7100/api/orders`, order, config);
+      const response = await axios.post(`https://e-shop-f7tx.onrender.com/api/orders`, order, config);
 
       dispatch({ type: ORDER_CREATE_SUCCESS, payload: response.data });
       console.log(response.data);
@@ -61,7 +61,7 @@ export const getOrderDetails = (id) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.get(`http://localhost:7100/api/orders/${id}`, config);
+      const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/orders/${id}`, config);
 
       dispatch({ type: ORDER_DETAILS_SUCCESS, payload: response.data });
       console.log(response.data);
@@ -92,7 +92,7 @@ export const payOrder = (orderId, paymentResult) => {
         },
       };
       const response = await axios.put(
-        `http://localhost:7100/api/orders/${orderId}/pay`,
+        `https://e-shop-f7tx.onrender.com/api/orders/${orderId}/pay`,
         paymentResult,
         config
       );
@@ -123,7 +123,7 @@ export const deliverOrder = (order) => {
         },
       };
       const response = await axios.put(
-        `http://localhost:7100/api/orders/${order._id}/deliver`,
+        `https://e-shop-f7tx.onrender.com/api/orders/${order._id}/deliver`,
         {},
         config
       );
@@ -150,7 +150,7 @@ export const listMyOrders = () => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.get(`http://localhost:7100/api/orders/myorders`, config);
+      const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/orders/myorders`, config);
 
       dispatch({ type: ORDER_LIST_MY_SUCCESS, payload: response.data });
     } catch (error) {
@@ -174,7 +174,7 @@ export const listOrders = () => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.get(`http://localhost:7100/api/orders`, config);
+      const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/orders`, config);
 
       dispatch({ type: ORDER_LIST_SUCCESS, payload: response.data });
     } catch (error) {

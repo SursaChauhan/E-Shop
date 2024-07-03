@@ -37,7 +37,7 @@ export const login = (email, password) => {
         },
       };
       const response = await axios.post(
-        'http://localhost:7100/api/users/login',
+        'https://e-shop-f7tx.onrender.com/api/users/login',
         { email, password },
         config
       );
@@ -76,7 +76,7 @@ export const register = (name, email, password) => {
         },
       };
       const response = await axios.post(
-        'http://localhost:7100/api/users',
+        'https://e-shop-f7tx.onrender.com/api/users',
         { name, email, password },
         config
       );
@@ -106,7 +106,7 @@ export const getUserDetail = (id) => {
   //         Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
   //       },
   //     };
-  //     const response = await axios.get(`http://localhost:7100/api/users/65bf87ab930eb92598107e5f`, config);
+  //     const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/users/65bf87ab930eb92598107e5f`, config);
 
   //     console.log(response.data);
 
@@ -135,7 +135,7 @@ export const updateUserProfile = (user) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.put(`http://localhost:7100/api/users/profile`, user, config);
+      const response = await axios.put(`https://e-shop-f7tx.onrender.com/api/users/profile`, user, config);
 
       dispatch({ type: USER_UPDATE_PROFILE_SUCCESS, payload: response.data });
     } catch (error) {
@@ -159,7 +159,7 @@ export const listUsers = () => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const response = await axios.get(`http://localhost:7100/api/users`, config);
+      const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/users`, config);
 
       dispatch({ type: USER_LIST_SUCCESS, payload: response.data });
     } catch (error) {
@@ -183,7 +183,7 @@ export const deleteUser = (id) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      await axios.delete(`http://localhost:7100/api/users/${id}`, config);
+      await axios.delete(`https://e-shop-f7tx.onrender.com/api/users/${id}`, config);
 
       dispatch({ type: USER_DELETE_SUCCESS });
     } catch (error) {
@@ -208,7 +208,7 @@ export const updateUser = (user) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      const { data } = await axios.put(`http://localhost:7100/api/users/${user._id}`, user, config);
+      const { data } = await axios.put(`https://e-shop-f7tx.onrender.com/api/users/${user._id}`, user, config);
 
       dispatch({ type: USER_UPDATE_SUCCESS });
       dispatch({ type: USER_DETAIL_SUCCESS, payload: data });

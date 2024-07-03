@@ -29,7 +29,7 @@ export const listProducts = (keyword = '', pageNumber = '') => {
     try {
       dispatch({ type: PRODUCT_LIST_REQUEST });
       const response = await axios.get(
-        `http://localhost:7100/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+        `https://e-shop-f7tx.onrender.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
 
       );
       console.log(response.data);
@@ -50,7 +50,7 @@ export const listProductDetail = (id) => {
   return async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_DETAIL_REQUEST });
-      const response = await axios.get(`http://localhost:7100/api/products/${id}`);
+      const response = await axios.get(`https://e-shop-f7tx.onrender.com/api/products/${id}`);
       dispatch({ type: PRODUCT_DETAIL_SUCCESS, payload: response.data });
     } catch (error) {
       dispatch({
@@ -151,7 +151,7 @@ export const createProductReview = (productId, review) => {
           Authorization: `Bearer ${getState().userLogin.userInfo.token}`,
         },
       };
-      await axios.post(`http://localhost:7100/api/products/${productId}/reviews`, review, config);
+      await axios.post(`https://e-shop-f7tx.onrender.com/api/products/${productId}/reviews`, review, config);
 
       dispatch({ type: PRODUCT_CREATE_REVIEW_SUCCESS });
     } catch (error) {
@@ -170,7 +170,7 @@ export const listTopProducts = () => {
   return async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_TOP_REQUEST });
-      const response = await axios.get('http://localhost:7100/api/products');
+      const response = await axios.get('https://e-shop-f7tx.onrender.com/api/products');
       console.log(response.data.products);
       dispatch({ type: PRODUCT_TOP_SUCCESS, payload: response.data.products });
     } catch (error) {
